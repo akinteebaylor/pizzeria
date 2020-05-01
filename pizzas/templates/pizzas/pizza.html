@@ -11,4 +11,9 @@
       <li> There are no topings for this Pizza.</li>
     {% endfor %}
 </ul>
+
+<p>
+  <a href="{% url 'pizzas:pizzacomments' Pizas.id %}">Add new entry</a>
+</p>
+
 {% endblock content %}
