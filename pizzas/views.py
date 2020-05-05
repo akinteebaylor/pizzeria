@@ -16,7 +16,8 @@ def topping(request,Pizza_id):
     "Display all Pizzas"
     Pizas = Pizza.objects.get(id=Pizza_id)
     toppings =Pizas.topping_set.order_by('name')
-    context = {'Pizas': Pizas, 'toppings': toppings}
+    comments = Pizas.pizza_comment_set.all()
+    context = {'Pizas': Pizas, 'toppings': toppings,'comments': comments}
     return render(request, 'pizzas/pizza.html',context)
 
 def pizzacomments(request,Pizza_id):

@@ -15,5 +15,21 @@
 <p>
   <a href="{% url 'pizzas:pizzacomments' Pizas.id %}">Add a Comment</a>
 </p>
+<p>Comments: </p>
+<ul>
+  {% for Comment in comments %}
+  <li>
+    <p>{{ Comment.text|linebreaks }}</p>
+  </li>
+  {% empty %}
+  <li> There are no comments for this Pizza.</li>
+  {% endfor %}
+</ul>
+<p>
+  <a href="{% url 'pizzas:pizzacomments' Pizas.id %}">Add a Comment</a>
+</p>
+
+
+
 
 {% endblock content %}
