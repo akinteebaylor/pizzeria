@@ -1,6 +1,8 @@
 {% extends "pizzas/base.html" %}
 {% block content %}
+{% load static %}
 <p>Pizzas : {{ Pizas }}</p>
+<img src="{% static 'pizzas/Hawain.png' width=50 %}">
 <p>Toppings: </p>
 <ul>
     {% for topping in toppings %}
@@ -11,6 +13,8 @@
       <li> There are no topings for this Pizza.</li>
     {% endfor %}
 </ul>
+
+
 
 <p>
   <a href="{% url 'pizzas:pizzacomments' Pizas.id %}">Add a Comment</a>
@@ -25,9 +29,7 @@
   <li> There are no comments for this Pizza.</li>
   {% endfor %}
 </ul>
-<p>
-  <a href="{% url 'pizzas:pizzacomments' Pizas.id %}">Add a Comment</a>
-</p>
+
 
 
 
